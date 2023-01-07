@@ -8,7 +8,7 @@ function ListTitles() {
 
   useEffect( () => {
     const fetchcols = async () => {
-    const response = await axios.get("http://LPinter.com/Test/getColumns.aspx");
+    const response = await axios.get("https://LPinter.com/Test/getColumns.aspx");
     const theData  = await response.data;
     // console.log(theData);
     setArticles(theData);

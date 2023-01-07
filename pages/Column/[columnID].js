@@ -16,9 +16,11 @@ function ShowOne() {
 
   useEffect( () => {
     const fetchcols = async () => {
-    const s1 = `http://LPinter.com/Test/IncCounter.aspx?id=${columnID}` ;
+    const s1 = `https://LPinter.com/Test/IncCounter.aspx?id=${columnID}` ;
+    // Changed from "http"
     await axios.get(s1);
-    const response = await axios.get(`http://LPinter.com/Test/getColumn.aspx?id=${columnID}`);
+    const response = await axios.get(`https://LPinter.com/Test/getColumn.aspx?id=${columnID}`);
+    // Changed from "http"
     const theData  = await response.data;
     setArticle  ( theData[0] );
     setTitle    ( theData[0].Title );

@@ -1,27 +1,13 @@
 import axios from 'axios'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
-function ListTitles() {
-
-  const [ articles, setArticles ] = useState ( [] )
-
-  useEffect( () => {
-    const fetchcols = async () => {
-    const response = await axios.get("https://LPinter.com/Test/getColumns.aspx");
-    const theData  = await response.data;
-    // console.log(theData);
-    setArticles(theData);
-    };
-    fetchcols();
-  }, []);
-
+const ListTitles = ( {columns} ) => {
   return (
     <div>
-      {<h3>{articles.length} articles</h3>}
+      {<h3>{columns.length} articles</h3>}
       <table>
         <tbody>
-        { articles.map ( 
+        { columns.map ( 
           (art) => 
           <tr key={art.ID}>
             <td style={{width: "170px"}}>
@@ -44,18 +30,11 @@ function ListTitles() {
   )
 }
 
-// export async function getStaticProps() {
-//   useEffect( () => {
-//     const fetchcols = async () => {
-//     const response = await axios.get("http://LPinter.com/Test/getColumns.aspx");
-//     const theData  = await response.data;
-//     setArticles(theData);
-//     };
-//     fetchcols();
-//   }, []);
-//   return (
-//     { props: { articles: articles }, revalidate: 3600 }
-//   );
-// }
+export const getStaticProps = async () => {
+  const data = await axios.get("https://LPinter.com/Test/getColumns.aspx");
+  return {
+    props: { columns: data.data, }, revalidate: 3600
+  };
+};
 
 export default ListTitles

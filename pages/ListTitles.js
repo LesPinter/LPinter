@@ -11,13 +11,12 @@ const ListTitles = ( {columns} ) => {
         { columns.map ( 
           (art) => 
           <tr key={art.ID} className={styles.rowHeight}>
-            <td style={{width: "170px"}}>
+            <td className={styles.p} style={{width: "170px"}}>
               <Link href={`/Column/${art.ID}`}>
                 {art.Title}
               </Link>
             </td>
-            {/* , fontStyle: "italic" */}
-            <td style={{fontSize: "7pt", color:"black"}}>
+            <td className={styles.p}>
               <Link href={`/Column/${art.ID}`}>
                 {art.subtitle}
               </Link>

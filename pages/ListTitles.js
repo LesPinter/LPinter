@@ -1,3 +1,4 @@
+import styles from '../styles/Layout.module.css'
 import axios from 'axios'
 import Link from 'next/link'
 
@@ -9,7 +10,7 @@ const ListTitles = ( {columns} ) => {
         <tbody>
         { columns.map ( 
           (art) => 
-          <tr key={art.ID}>
+          <tr key={art.ID} className={styles.rowHeight}>
             <td style={{width: "170px"}}>
               <Link href={`/Column/${art.ID}`}>
                 {art.Title}

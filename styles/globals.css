@@ -13,7 +13,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 h1 {
@@ -53,3 +53,7 @@ tr, td {
 }
 
 tr:hover { font-weight: bold; }
+
+Link {
+  text-decoration: underline;
+}

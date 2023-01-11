@@ -50,9 +50,17 @@ tr, td {
   font-size: 10pt;
   color: purple;
   font-family: Tahoma;
+  vertical-align: top;
 }
 
-tr:hover { font-weight: bold; }
+td {
+  padding-bottom: 8px;
+}
+
+tr:hover { 
+  color: white;
+  background-color: yellow;
+}
 
 Link {
   text-decoration: underline;

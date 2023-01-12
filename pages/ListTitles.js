@@ -17,7 +17,7 @@ const ListTitles = ( {columns} ) => {
               </Link>
             </td>
             <td className={styles.p}>
-              <Link href={`/Column/${art.ID}`}>
+              <Link href={`/Column/${art.ID}`} style={{textDecoration: "none"}}>
                 {art.subtitle}
               </Link>
             </td>
